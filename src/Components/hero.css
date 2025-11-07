@@ -1,0 +1,8 @@
+.bounding {
+  transform: translateY(0%);
+}
+
+#realHead {
+  perspective: 2000px;
+  position: relative;
+}
