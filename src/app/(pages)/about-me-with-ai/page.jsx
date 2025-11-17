@@ -305,7 +305,7 @@ const KnowMeWithAI = () => {
       <AnimatedBackground />
 
       <motion.div
-        className="pointer-events-none fixed inset-0 z-10"
+        className="pointer-events-none fixed inset-0 z-10 overflow-x-hidden"
         style={{
           background: `radial-gradient(600px at ${mouse.x}px ${mouse.y}px, rgba(99,102,241,0.15), transparent 70%)`,
         }}
