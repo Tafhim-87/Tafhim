@@ -228,6 +228,20 @@ const Navbar = () => {
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full"></span>
               )}
             </Link>
+            <Link
+              ref={ref5}
+              href="/about-me-with-ai"
+              className={`relative py-2 px-1 transition-colors font-medium ${
+                pathname === "/about-me-with-ai" ? "text-blue-400" : "text-white/90 hover:text-white"
+              }`}
+              onMouseEnter={(e) => handleHover(e.target)}
+              onMouseLeave={(e) => handleHoverOut(e.target)}
+            >
+              Regarding TI
+              {pathname === "/about-me-with-ai" && (
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full"></span>
+              )}
+            </Link>
           </div>
 
           {/* Enhanced Hire Me Button with glass effect */}
@@ -308,6 +322,20 @@ const Navbar = () => {
               <span className="flex items-center gap-3">
                 <div className={`w-2 h-2 rounded-full ${pathname === "/projects" ? "bg-blue-400" : "bg-white/40 group-hover:bg-blue-400"} transition-colors`}></div>
                 Projects
+              </span>
+            </Link>
+            <Link
+              href="/about-me-with-ai"
+              className={`w-full py-4 px-6 rounded-xl transition-all duration-300 group ${
+                pathname === "/about-me-with-ai" 
+                  ? "bg-blue-500/20 text-blue-400 border border-blue-500/30 backdrop-blur-md" 
+                  : "text-white/90 hover:text-white hover:bg-white/10 backdrop-blur-sm border border-transparent hover:border-white/10"
+              }`}
+              onClick={toggleMenu}
+            >
+              <span className="flex items-center gap-3">
+                <div className={`w-2 h-2 rounded-full ${pathname === "/projects" ? "bg-blue-400" : "bg-white/40 group-hover:bg-blue-400"} transition-colors`}></div>
+                Regarding TI
               </span>
             </Link>
 

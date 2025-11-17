@@ -15,6 +15,10 @@ export default function ClientLayout({ children }) {
     // Add more routes here if needed
   ];
 
+  const hiddenFooter= [
+    '/about-me-with-ai'
+  ]
+
   const shouldHideNavbarFooter = hideNavbarFooterRoutes.some(route => 
     pathname.startsWith(route)
   );
@@ -23,7 +27,7 @@ export default function ClientLayout({ children }) {
     <>
       {!shouldHideNavbarFooter && <Navbar />}
       {children}
-      {!shouldHideNavbarFooter && <Footer />}
+      {!shouldHideNavbarFooter && !hiddenFooter.includes(pathname) && <Footer />}
     </>
   );
 }
