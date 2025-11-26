@@ -3,7 +3,7 @@ import "./globals.css";
 import ClientLayout from "./ClientLayout";
 import Script from "next/script";
 
-// Local Fonts
+// Fonts
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -16,26 +16,57 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-// SEO Metadata
+// Global SEO metadata
 export const metadata = {
-  title: "Tafhim Hasan | Frontend Developer & Designer",
-  description:
-    "I'm Tafhim Hasan, a passionate Frontend Developer specializing in Next.js, React, and modern web design. Explore my projects, design work, and web innovations.",
+  metadataBase: new URL("https://tafhim.vercel.app"),
 
-  // ✅ Google Search Console Verification (META tag version)
+  title: {
+    default: "Tafhim Hasan | Frontend Developer & Designer",
+    template: "%s | Tafhim Hasan",
+  },
+
+  description:
+    "Professional Frontend Developer skilled in Next.js, React, Tailwind CSS, animation, and web UI engineering. Explore projects, achievements, and design work.",
+
+  keywords: [
+    "Frontend Developer",
+    "Next.js Developer",
+    "React Developer",
+    "Web Designer",
+    "Portfolio",
+    "Bangladesh Developer",
+  ],
+
+  authors: [{ name: "Tafhim Hasan" }],
+
+  creator: "Tafhim Hasan",
+
+  // Canonical
+  alternates: {
+    canonical: "https://tafhim.vercel.app",
+  },
+
+  // Google Search Console
   verification: {
     google: "google0d78b39a8e1d93b6",
   },
 
+  // Icons
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
+  // Enhanced OpenGraph (best for sharing)
   openGraph: {
     title: "Tafhim Hasan | Frontend Developer & Designer",
     description:
-      "Explore Tafhim Hasan’s portfolio: modern web apps built with Next.js, React, and Tailwind CSS.",
+      "Explore modern web development projects built with Next.js, React, GSAP, and Tailwind CSS.",
     url: "https://tafhim.vercel.app",
     siteName: "Tafhim Hasan Portfolio",
     images: [
       {
-        url: "https://tafhim.vercel.app/og-image.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Tafhim Hasan Portfolio Preview",
@@ -44,13 +75,30 @@ export const metadata = {
     locale: "en_US",
     type: "website",
   },
+
+  // Twitter Card support
+  twitter: {
+    card: "summary_large_image",
+    title: "Tafhim Hasan | Frontend Developer",
+    description: "Frontend Developer specializing in Next.js & modern UI engineering.",
+    images: ["/og-image.png"],
+    creator: "@tafhimhasan",
+  },
+
+  // Performance optimizations
+  themeColor: "#000000",
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* ✅ Structured Data for Google */}
+        {/* High-performance preloads */}
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+        {/* JSON-LD Schema — Best for Google Rankings */}
         <Script
           id="structured-data"
           type="application/ld+json"
@@ -64,7 +112,7 @@ export default function RootLayout({ children }) {
               jobTitle: "Frontend Developer",
               worksFor: {
                 "@type": "Organization",
-                name: "Freelance / Agency Work",
+                name: "Freelance / Agency",
               },
               sameAs: [
                 "https://www.linkedin.com/in/tafhimhasan/",
@@ -75,7 +123,9 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
+      >
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
