@@ -18,6 +18,12 @@ export const metadata = {
   title: "Tafhim Hasan | Frontend Developer & Designer",
   description:
     "I'm Tafhim Hasan, a passionate Frontend Developer specializing in Next.js, React, and modern web design. Explore my projects, design work, and web innovations.",
+  
+  // 🔑 GOOGLE SITE VERIFICATION ADDED HERE (Next.js Recommended Method)
+  verification: {
+    google: ' google0d78b39a8e1d93b6',
+  },
+  
   openGraph: {
     title: "Tafhim Hasan | Frontend Developer & Designer",
     description:
@@ -41,7 +47,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* ✅ Structured Data for Google */}
+        {/* ✅ Structured Data for Google (kept for context) */}
         <Script
           id="structured-data"
           type="application/ld+json"
