@@ -53,9 +53,15 @@ export const metadata = {
 
   // Icons
   icons: {
-    icon: "/favicon.ico",
-    apple: "/favicon.png",
-  },
+  icon: [
+    { url: "/favicon.ico" },
+    { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+    { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+  ],
+  apple: "/favicon.png",
+},
+
 
   // Enhanced OpenGraph (best for sharing)
   openGraph: {
