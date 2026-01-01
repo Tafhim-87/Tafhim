@@ -14,7 +14,7 @@ export async function POST(req) {
       );
     }
 
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const context = `
 You are an AI assistant representing ${developerInfo.name}, a ${developerInfo.role} from ${developerInfo.location}.
